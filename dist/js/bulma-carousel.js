@@ -1592,25 +1592,27 @@ var Navigation = function () {
 		key: 'refresh',
 		value: function refresh() {
 			// let centerOffset = Math.floor(this.options.slidesToShow / 2);
-			if (!this.slider.options.loop && !this.slider.options.infinite) {
-				if (this.slider.options.navigation && this.slider.state.length > this.slider.slidesToShow) {
-					this._ui.previous.classList.remove('is-hidden');
-					this._ui.next.classList.remove('is-hidden');
-					if (this.slider.state.next === 0) {
-						this._ui.previous.classList.add('is-hidden');
+			if (!this.slider.options.loop
+			//&& !this.slider.options.infinite
+			) {
+					if (this.slider.options.navigation && this.slider.state.length > this.slider.slidesToShow) {
+						this._ui.previous.classList.remove('is-hidden');
 						this._ui.next.classList.remove('is-hidden');
-					} else if (this.slider.state.next >= this.slider.state.length - this.slider.slidesToShow && !this.slider.options.centerMode) {
-						this._ui.previous.classList.remove('is-hidden');
-						this._ui.next.classList.add('is-hidden');
-					} else if (this.slider.state.next >= this.slider.state.length - 1 && this.slider.options.centerMode) {
-						this._ui.previous.classList.remove('is-hidden');
+						if (this.slider.state.next === 0) {
+							this._ui.previous.classList.add('is-hidden');
+							this._ui.next.classList.remove('is-hidden');
+						} else if (this.slider.state.next >= this.slider.state.length - this.slider.slidesToShow && !this.slider.options.centerMode) {
+							this._ui.previous.classList.remove('is-hidden');
+							this._ui.next.classList.add('is-hidden');
+						} else if (this.slider.state.next >= this.slider.state.length - 1 && this.slider.options.centerMode) {
+							this._ui.previous.classList.remove('is-hidden');
+							this._ui.next.classList.add('is-hidden');
+						}
+					} else {
+						this._ui.previous.classList.add('is-hidden');
 						this._ui.next.classList.add('is-hidden');
 					}
-				} else {
-					this._ui.previous.classList.add('is-hidden');
-					this._ui.next.classList.add('is-hidden');
 				}
-			}
 		}
 	}, {
 		key: 'render',

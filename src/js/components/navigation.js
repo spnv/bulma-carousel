@@ -80,7 +80,9 @@ export default class Navigation {
 
 	refresh() {
 		// let centerOffset = Math.floor(this.options.slidesToShow / 2);
-		if (!this.slider.options.loop && !this.slider.options.infinite) {
+		if (!this.slider.options.loop
+			//&& !this.slider.options.infinite
+		) {
 			if (this.slider.options.navigation && this.slider.state.length > this.slider.slidesToShow) {
 				this._ui.previous.classList.remove('is-hidden');
 				this._ui.next.classList.remove('is-hidden');
