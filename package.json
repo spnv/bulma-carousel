@@ -1,5 +1,5 @@
 {
-  "name": "bulma-carousel",
+  "name": "bulma-carousel-spnv",
   "description": "Display a Image / Content carousel",
   "main": "dist/js/bulma-carousel.js",
   "style": "dist/css/bulma-carousel.min.css",
